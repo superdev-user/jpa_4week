@@ -34,4 +34,12 @@ public class EmbeddedMappingRepositoryTests {
         Optional<IdClassMapping> result = idClassMappingRepository.findById(new ParentId(id1, id2));
         assertThat(result.get().getName()).isEqualTo(name);
     }
+
+    @Test
+    public void successTest(){
+        // hashcode, equals 제거시 오류 발생
+        ParentId parentId1 = new ParentId("test1", "test2");
+        ParentId parentId2 = new ParentId("test1", "test2");
+        assertThat(parentId1).isEqualTo(parentId2);
+    }
 }

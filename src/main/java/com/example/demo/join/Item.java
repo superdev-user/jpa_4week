@@ -1,5 +1,7 @@
 package com.example.demo.join;
 
+import lombok.Setter;
+
 import javax.persistence.*;
 
 /**
@@ -8,6 +10,7 @@ import javax.persistence.*;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED) // 1
 @DiscriminatorColumn(name = "DTYPE") // 2
+@Setter
 public abstract class Item{
     @Id
     @GeneratedValue
